@@ -22,6 +22,7 @@ module.exports = {
   ],
 
   rules: {
+    "no-undef": "off",
     "prettier/prettier": "error",
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error",
@@ -46,6 +47,7 @@ module.exports = {
     "react/jsx-uses-react": "off", // 关闭旧模式校验
     "react/react-in-jsx-scope": "off", // 关闭旧模式校验
     "react/jsx-props-no-spreading": "off",
+    "no-underscore-dangle": "off",
   },
   settings: {
     react: {

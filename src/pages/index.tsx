@@ -2,7 +2,7 @@ import styles from "./index.module.scss";
 
 export default function Home() {
   return (
-    <div>
+    <div className="relative">
       <main className="min-h-screen flex flex-col justify-between">
         <div className="flex flex-col justify-center items-center grow">
           <p className={styles.welcome}>WELCOME,MY SPACE</p>
