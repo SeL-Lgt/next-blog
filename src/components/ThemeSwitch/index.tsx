@@ -1,14 +1,22 @@
 import { useEffect, useState } from "react";
 
 import Observer from "@/utils/observer";
+import utils from "@/utils/utils";
 
 function ThemeSwitch() {
   const [theme, setTheme] = useState("");
 
   useEffect(() => {
-    const defaultTheme =
-      localStorage.getItem("theme") ||
-      (window.matchMedia("(prefers-color-scheme: dark)") ? "dark" : "light");
+    const defaultTheme = (localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)")
+        ? "dark"
+        : "light")) as ThemeType;
+    Observer.on<ThemeType, void>(
+      "changeTheme",
+      "changeTheme",
+      utils.changeTheme
+    );
+    Observer.emit("changeTheme", defaultTheme);
     setTheme(defaultTheme);
   }, []);
 
