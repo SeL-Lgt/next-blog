@@ -1,3 +1,6 @@
+import SocialIcons from "@/components/SocialIcons";
+import siteMetadata from "@/data/siteMetadata";
+
 import styles from "./index.module.scss";
 
 export default function Home() {
@@ -9,8 +12,12 @@ export default function Home() {
           <p className="text-5xl font-bold">不知名的狼窝</p>
         </div>
         <div className="absolute bottom-40 w-full flex justify-center gap-3">
-          <p>123</p>
-          <p>123</p>
+          <SocialIcons
+            kind="mail"
+            href={`mailto:${siteMetadata.email}`}
+            size={6}
+          />
+          <SocialIcons kind="github" href={siteMetadata.github} size={6} />
         </div>
       </main>
     </div>
